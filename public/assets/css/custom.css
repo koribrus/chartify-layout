@@ -1,0 +1,120 @@
+/* ----- custom navbar desktop ----- */
+.navbar.top {
+  box-shadow: none !important;
+}
+
+/* --------------- HAMBURGER MENU --------------- */
+.side-nav {
+  position: relative;
+}
+
+/* checkbox */
+.side-nav .toggler {
+  position: absolute;
+  top: 8px;
+  right: 24px;
+  z-index: 1050;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+}
+
+/* outside wrapper */
+.side-nav .hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1035;
+  width: 30px;
+  height: 30px;
+  /* background: var(--bs-heading-color); */
+}
+
+/* navigation container */
+.menu {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 230px;
+  text-align: left;
+  transform: translateX(100%);
+  transition: all 0.4s ease;
+}
+
+/* top level container */
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1032;
+}
+
+/* lines */
+.side-nav .hamburger > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 100%;
+  height: 2px;
+  /* background: #fff; */
+  transition: all 0.4s ease;
+}
+.side-nav .hamburger > div::before,
+.side-nav .hamburger > div::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+  z-index: 1035;
+}
+.side-nav .hamburger > div::after {
+  top: 10px;
+}
+
+/* hamburger animation */
+.side-nav .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+  background: rgb(52, 71, 103);
+}
+.side-nav .toggler:checked + .hamburger > div::before,
+.side-nav .toggler:checked + .hamburger > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* show menu */
+.side-nav .toggler:checked ~ .menu-wrap .menu {
+  transform: translateX(0);
+}
+
+/* hamburger color */
+.ham-light {
+  background: #fff;
+}
+.ham-dark {
+  background: rgb(52, 71, 103);
+}
+
+/* --------------- NAV LINK HOR RULE --------------- */
+.nav-hr {
+  position: relative;
+}
+.nav-hr::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
+  z-index: 1040;
+}
