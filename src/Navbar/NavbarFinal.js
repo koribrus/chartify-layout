@@ -29,16 +29,14 @@ const NavbarFinal = () => {
   const hamburgerColor = transparentHeader ? 'ham-light' : 'ham-dark';
 
   return (
-    <nav className={`navbar fixed-top navbar-expand-lg py-3 ${whiteBg}`}>
-      <Mobile whiteTxt={whiteTxt} hamburgerColor={hamburgerColor} />
-      {/* <div className='container'>
-        <a className={`navbar-brand fs-5 ${whiteTxt}`} href='#'>
-          Chartify
-        </a>
- 
-        <Mobile />
-      </div> */}
-    </nav>
+    <>
+      <Desktop whiteTxt={whiteTxt} whiteBg={whiteBg} />
+      <Mobile
+        whiteTxt={whiteTxt}
+        whiteBg={whiteBg}
+        hamburgerColor={hamburgerColor}
+      />
+    </>
   );
 };
 
